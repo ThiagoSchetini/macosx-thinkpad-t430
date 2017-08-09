@@ -70,8 +70,9 @@ INSTALL CLOVER (Your EFI Boot)
 	* if you restart, use EFI Mounter from tools folder
 
 
-EFI/CLOVER 
-	-> config.plist -> use the one from this repository
+EFI/CLOVER
+
+    -> config.plist: use the one from this repository
 		take from low-resolution-config.plist folder for 1366x768 display
 		take from high-resolution-config.plist folder for 1600x900 or + display
 
