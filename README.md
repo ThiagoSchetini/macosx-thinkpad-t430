@@ -25,7 +25,7 @@ Credits to Rehabman
 
 
     NOT WORKING ...
-        On Shutdown, need to remove USB otherwise system will restart
+        On Shutdown, need to remove USB 3.0 devices otherwise system will restart (USB 2.0 is ok!)
         SSD Trim (disabled. not recommended for OEM SSD’s on MacOSX) 
         VGA output (apple doesn’t have support)
         SD Card Reader 
