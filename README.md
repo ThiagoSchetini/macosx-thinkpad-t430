@@ -4,7 +4,7 @@ Vanilla MacOSX on T430, almost perfectly with Sierra 12.6!
 Credits to Rehabman 
 
 
-    -> WORKING =)
+    WORKING =)
         Intel Hyperthread (8 Threads)
         Intel TurboBoost (up to 3.2 Ghz)
         Intel SpeedStep 
@@ -23,9 +23,8 @@ Credits to Rehabman
         Webcam + Mic
         Keyboard+ TouchPad	
 
-NOT  =(
 
-    -> ok...
+    -> NOT WORKING ...
         On Shutdown, need to remove USB otherwise system will restart
         SSD Trim (disabled. not recommended for OEM SSD’s on MacOSX) 
         VGA output (apple doesn’t have support)
