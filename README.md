@@ -1,41 +1,36 @@
-Any display resolution Hack!
-For i7 3632QM or i5 default!
-It's a Vanilla (UEFI) Install with Clover and has Good chances for future successfull updates
+Vanilla MacOSX on T430, almost perfectly with Sierra 12.6!
 
-Almost Perfectly with Sierra 12.6!
 
 Credits to Rehabman 
 
 
 WORKING =)
-Intel Hyperthread (8 Threads)
-
-Intel TurboBoost (up to 3.2 Ghz)
-	Intel SpeedStep 
-	CPU HW Monitor (temps, clock and power) 
-	RAM DDR3 at 1600mhz
-	Intel HD4000 1536MB
-	Brightness (FULL Range + Fn Brightness Keys)
-	Display Port Out FullHD + Audio
-	Battery Status
-	WiFi + Bluetooth (patched Atheros Ar5b195)
-	Ethernet 
-	Sleep (with both working sleep leds on/off)
-	Display turns on automatically on wake/instant wake	
-	USB 3.0 Full Speed
-	Audio ALC269 (Everything works, even after sleep)
-	Webcam + Mic
-	Keyboard+ TouchPad	
+    -> running 100% !
+        Intel Hyperthread (8 Threads)
+        Intel TurboBoost (up to 3.2 Ghz)
+        Intel SpeedStep 
+        CPU HW Monitor (temps, clock and power) 
+        RAM DDR3 at 1600mhz
+        Intel HD4000 1536MB
+        Brightness (FULL Range + Fn Brightness Keys)
+        Display Port Out FullHD + Audio
+        Battery Status
+        WiFi + Bluetooth (using a rebranded Atheros Ar5b195)
+        Ethernet 
+        Sleep (with both working sleep leds on/off)
+        Display turns on automatically on wake/instant wake	
+        USB 3.0 Full Speed
+        Audio ALC269 (Everything works, even after sleep)
+        Webcam + Mic
+        Keyboard+ TouchPad	
 
 NOT  =(
-	On Shutdown, need to remove USB otherwise system will restart
-	SSD Trim (disabled. not recommended for OEM SSD’s on MacOSX) 
-	VGA output (apple doesn’t have support)
-	SD Card Reader 
+    -> ok...
+        On Shutdown, need to remove USB otherwise system will restart
+        SSD Trim (disabled. not recommended for OEM SSD’s on MacOSX) 
+        VGA output (apple doesn’t have support)
+        SD Card Reader 
 
-
-NOTE: PrintScreen key turns touchpad on/off
-NOTE: The codec ALC269 with layout 28 probably will work on every T430!
 
 
 CREATING INSTALLER
