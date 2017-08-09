@@ -5,6 +5,7 @@ Credits to Rehabman
 
 
 WORKING =)
+
     -> running 100% !
         Intel Hyperthread (8 Threads)
         Intel TurboBoost (up to 3.2 Ghz)
@@ -25,6 +26,7 @@ WORKING =)
         Keyboard+ TouchPad	
 
 NOT  =(
+
     -> ok...
         On Shutdown, need to remove USB otherwise system will restart
         SSD Trim (disabled. not recommended for OEM SSD’s on MacOSX) 
