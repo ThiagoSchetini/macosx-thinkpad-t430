@@ -24,7 +24,7 @@ Credits to Rehabman
         Keyboard+ TouchPad	
 
 
-    -> NOT WORKING ...
+    NOT WORKING ...
         On Shutdown, need to remove USB otherwise system will restart
         SSD Trim (disabled. not recommended for OEM SSD’s on MacOSX) 
         VGA output (apple doesn’t have support)
@@ -33,41 +33,45 @@ Credits to Rehabman
 
 
 CREATING INSTALLER
-	Unibeast Sierra UEFI only without ATI/nVidia (look at tools folder)
-	EFI/CLOVER/drivers64UEFI/
-		Remove everything and put the 4 files this repository
 
-	Put all the kexts from 10.12 (or the version u trying to) on other
-	Remove all the kexts folders except other
+    -> With Unibeast select Sierra UEFI only without ATI/nVidia (look at tools folder)
+    
+    -> After creation of USB Installer go to EFI/CLOVER/drivers64UEFI/
+        Remove everything and put the 4 files this repository
+
+	-> Put all the kexts from 10.12 (or about the version you are trying to make) on other
+	
+    -> Remove all the kexts folders except other
 
 
 INSTALL MAC OSX
-	You need a mouse and external keyboard pluged (only for the install process)
-	If stucks on boot disable inject intel graphics
+
+    -> You need a mouse and external keyboard pluged (only for the install process)
+    
+    -> If stucks on boot disable inject intel graphics
 
 	
 SHOW HIDDEN FILES PLEASE!
-	-> on Terminal:
-  		defaults write com.apple.finder AppleShowAllFiles YES
+
+	-> after first boot, on Terminal:
+        defaults write com.apple.finder AppleShowAllFiles YES
 		killAll Finder
 
 
 INSTALL CLOVER (Your EFI Boot)
+
 	-> Install “clover.pkg” (look inside tools folder)
-		Check Install for UEFI Booting Only
+        Check Install for UEFI Booting Only
 		Check Install Clover in the ESP
 		Check Drivers 64 UEFI (IMPORTANT! only OsxAptioFix2Drv-64)
 
 	-> Now you can remove your Installer Pen Drive (you have boot)
-	
-	but wait… do the modifications below on your EFI mounted before restart
-	* if you restart, use EFI Mounter from tools folder
 
 
 EFI/CLOVER
 
     -> config.plist: use the one from this repository
-		take from low-resolution-config.plist folder for 1366x768 display
+        take from low-resolution-config.plist folder for 1366x768 display
 		take from high-resolution-config.plist folder for 1600x900 or + display
 
 	-> /drivers64UEFI
@@ -115,84 +119,96 @@ EFI/CLOVER
 			-> Put the .aml files on the folder: ACPI/patched inside clover UEFI
 
 KEXTS
-	Make a beckup of AppleBacklight.kext (Brightness), why?
-		for future updates you gonna need to: 
-		-> reinstall the original AppleBacklight.kext
-		-> flush kext cache
-		-> Update
-		-> After Update reinstall the patched one
 
-		** yes, the backlight kext inside kexts folder is patched for T430 brightness full range control
+    -> Make a beckup of AppleBacklight.kext (Brightness)
+		Why? for future updates you need to reinstall the original and then reinstall the pached
 
-	Now, install all the kexts from the folder using “Kext Utility.app” (look inside tools folder)
-	please, don’t restart yet.
+		** Warning!, the backlight kext inside kexts folder is patched for T430 brightness full range control
+
+	-> Now, install all the kexts from the folder using “Kext Utility.app” (look inside tools folder)
 	
 
 VOODOO EXTRA FILES (for Keyboard)
-	-> enter inside voodoo folder with the terminal
+
+	-> enter inside voodoo's' folder with the terminal
 		sudo cp org.rehabman.voodoo.driver.Daemon.plist /Library/LaunchDaemons
 		sudo cp VoodooPS2Daemon /usr/bin
 
 
 NOW, RESTART AND GET AUDIO WORKING
+
 	-> after restart you need to flush the kexts:
 		sudo touch /System/Library/Extensions && sudo kextcache -u /
 	-> restart again to see the audio working!
 
 
 NO AUDIO YET?
+
 	-> sudo touch /System/Library/Extensions && sudo kextcache -u /
 	-> Restart Again!
 	* If you have problems, try to disable the option No Cache on config.plist and restart again.	
 
 
 HWMONITOR 
-	-> Put the HWMONITOR from tools folder on applications and open it, you should read power, clock, and temps of u CPU
+
+	-> Put the HWMONITOR from tools folder on applications and open it, you should read power, clock, and temps of your CPU
 
 
 NO HIBERNATE AT ALL
+
 	-> Disable Hibernation and related options
-	sudo pmset -a hibernatemode 0
-	sudo rm /var/vm/sleepimage
-	sudo mkdir /var/vm/sleepimage
-	sudo pmset -a standby 0
-	sudo pmset -a autopoweroff 0
+        sudo pmset -a hibernatemode 0
+        sudo rm /var/vm/sleepimage
+        sudo mkdir /var/vm/sleepimage
+        sudo pmset -a standby 0
+        sudo pmset -a autopoweroff 0
 
 
 ABOUT THIS DSDT CODE 
-	basically I modified some original patches from Rehabman:
+
+    -> basically I modified some original patches from Rehabman:
+
 			[modified] Lenovo X220 
 				-> added T430 sleep leds
 				-> cleaned extra code
+
 			[modified] Brightness fix (HD3000/HD4000)
 				-> included FN brightness keys (T430 only) 
+
 			[usb] USB3_PRW 0x0D (instant wake)
 				-> to have sleep working (original Rehabman code)
+
 			[audio] Audio Layout 28
 				-> to work with the ALC269 kext (original Rehabman code)
+
 			[sys] IRQ Fix
 				-> to enable audio (original Rehabman code)
+
 			[igpu] Low Resolution (or High)
 				-> to enable HDMI display port audio out
+
 			[manual] Code change on .dsl to turn on screen automatically on wake
 
 
 COMPLETE KEXT FLUSH (recomended after remove a kext)
-	** repair permissions:
-	sudo /usr/libexec/repair_packages --repair --standard-pkgs --volume /
-	
-	** rebuild kext cache
-	sudo rm -r /System/Library/Caches/com.apple.kext.caches
-	sudo touch /System/Library/Extensions
-	sudo kextcache -update-volume /
 
-	OR ** rebuild cache short form
-	sudo touch /System/Library/Extensions && sudo kextcache -u /
+	-> repair permissions:
+        sudo /usr/libexec/repair_packages --repair --standard-pkgs --volume /
+	
+    -> rebuild kext cache
+        sudo rm -r /System/Library/Caches/com.apple.kext.caches
+        sudo touch /System/Library/Extensions
+        sudo kextcache -update-volume /
+
+	-> rebuild cache short form
+        sudo touch /System/Library/Extensions && sudo kextcache -u /
 
 
 GENERATE VANILLA CONFIG.PLIST (if you need)
-	/usr/local/bin/clover-genconfig >config.plist
+
+	on /usr/local/bin/clover-genconfig >config.plist
 	execute and take the xml
 
 HOW TO FLASH T430 BIOS (if you want to install an 1300AC WiFi …)
+
 https://github.com/bibanon/Coreboot-ThinkPads/wiki/xx30-BIOS-Whitelist-Removal
