@@ -1,21 +1,16 @@
-MacOSX on Thinkpad T430
-
-Hackbook Pro i7 3632QM (504 pts on Cinebench)
-You can use i5 too! 
 Any display resolution Hack!
-Vanilla Install with Clover
-UEFI Only
-Almost Perfectly with Sierra 12.6!
-Good chances for future successfull updates
+For i7 3632QM or i5 default!
+It's a Vanilla (UEFI) Install with Clover and has Good chances for future successfull updates
 
+Almost Perfectly with Sierra 12.6!
 
 Credits to Rehabman 
 
 
-
 WORKING =)
-	Intel Hyperthread (8 Threads)
-	Intel TurboBoost (up to 3.2 Ghz)
+Intel Hyperthread (8 Threads)
+
+Intel TurboBoost (up to 3.2 Ghz)
 	Intel SpeedStep 
 	CPU HW Monitor (temps, clock and power) 
 	RAM DDR3 at 1600mhz
