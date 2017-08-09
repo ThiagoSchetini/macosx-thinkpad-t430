@@ -4,9 +4,7 @@ Vanilla MacOSX on T430, almost perfectly with Sierra 12.6!
 Credits to Rehabman 
 
 
-WORKING =)
-
-    -> running 100% !
+    -> WORKING =)
         Intel Hyperthread (8 Threads)
         Intel TurboBoost (up to 3.2 Ghz)
         Intel SpeedStep 
