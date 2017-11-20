@@ -31,6 +31,10 @@ Credits to Rehabman
         SD Card Reader 
 
 
+NEW! REBRAND A DUAL BAND ATHEROS TO USE ON T430:
+    There is an Atheros ID's signature that passes on T430 whitelist. Follow the steps on my another repository:
+	`https://github.com/ThiagoSchetini/AR9285-rebranding`
+
 
 CREATING INSTALLER
 
@@ -208,6 +212,12 @@ GENERATE VANILLA CONFIG.PLIST (if you need)
 
 	on /usr/local/bin/clover-genconfig >config.plist
 	execute and take the xml
+
+
+AGAIN, HOW TO REBRAND A DUAL BAND ATHEROS TO USE ON T430:
+
+	`https://github.com/ThiagoSchetini/AR9285-rebranding`
+
 
 HOW TO FLASH T430 BIOS (if you want to install an 1300AC WiFi …)
 
